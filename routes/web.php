@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/pizzpad', ['uses' => 'PZPizzaPadController@index']);
+
+Route::get('/cheese', ['uses' => 'PZCheeseController@index']);
+
+Route::get('/ingredients', ['uses' => 'PZIngredientsController@index']);
+
