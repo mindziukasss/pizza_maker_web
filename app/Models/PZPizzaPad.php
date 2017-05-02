@@ -12,12 +12,12 @@ class PZPizzaPad extends PZBaseModel
 
     public function cheese()
     {
-        return $this->hasOne(PZConnections_ingredients_pizzaPad_cheese::class, 'cheese_id', 'id')->with(['cheese']);
+        return $this->hasOne(PZConnections_ingredients_pizzaPad_cheese::class, 'cheese_id', 'id')->with(['cheese', 'pizzaPad']);
     }
 
     public function ingredients()
     {
-        return $this->belongsToMany(PZIngredients::class,'pz_connections_ingredients_pizzaPad_cheese', 'ingredients_id', 'pizzaPad_id',
+        return $this->belongsToMany(PZIngredients::class,'pz_connections_ingredients_pizzaPad_cheese', 'pizzaPad_id', 'ingredients_id',
             'cheese_id');
     }
 }

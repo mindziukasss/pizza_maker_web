@@ -8,5 +8,5 @@
     <div>{{ Form::checkbox('ingredients_names[]', $key)}}
         {{$ingredient}}</div>
 @endforeach
-
+    {{ Form::submit('Make') }}
 {!! Form::close() !!}

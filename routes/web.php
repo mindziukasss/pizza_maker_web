@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'pizzpad'], function () {
-    Route::post('/create', ['as' => 'makepizza.create', 'use' => 'PZPizzaPadController@create' ]);
+    Route::post('/create', ['as' => 'makepizza.create', 'uses' => 'PZPizzaPadController@create']);
     Route::get('/', ['uses' => 'PZPizzaPadController@index']);
 
 });
