@@ -8,6 +8,11 @@ class PZConnections_ingredients_pizzaPad_cheese extends Model
 {
     protected $table = 'pz_connections_ingredients_pizzaPad_cheese';
 
-    protected $fillable = ['id', '	pizzaPad_id', 'ingredients_id','cheese_id'];
+    protected $fillable = ['id', 'pizzaPad_id', 'ingredients_id','cheese_id'];
+
+    public function cheese()
+    {
+        return $this->hasOne(PZCheese::class, 'id', 'cheese_id');
+    }
 
 }

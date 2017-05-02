@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'pizzpad'], function () {
+    Route::post('/create', ['as' => 'makepizza.create', 'use' => 'PZPizzaPadController@create' ]);
+    Route::get('/', ['uses' => 'PZPizzaPadController@index']);
 
-Route::get('/pizzpad', ['uses' => 'PZPizzaPadController@index']);
+});
+
 
 Route::get('/cheese', ['uses' => 'PZCheeseController@index']);
 
